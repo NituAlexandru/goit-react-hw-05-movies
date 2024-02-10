@@ -4,6 +4,8 @@ import Home from './Pages/Home';
 import Movies from './Pages/Movies';
 import MovieDetails from './Pages/MovieDetails';
 import Navbar from './Navbar/Navbar';
+import Cast from './Pages/Cast';
+import Reviews from './Pages/Reviews';
 
 const App = () => {
   return (
@@ -12,7 +14,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
       </Routes>
     </Router>
   );
