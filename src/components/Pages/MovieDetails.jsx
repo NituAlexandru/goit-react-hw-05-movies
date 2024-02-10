@@ -1,12 +1,13 @@
 // MovieDetails.jsx
 import React, { useState, useEffect } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../API/ApiService';
 import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
+  const location = useLocation(); // Accesează locația curentă
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -29,6 +30,18 @@ const MovieDetails = () => {
 
   return (
     <div className={styles.movieDetails}>
+      <Link
+        to={
+          location.state?.from === '/movies'
+            ? `/movies${
+                location.state.search ? `?query=${location.state.search}` : ''
+              }`
+            : '/'
+        }
+        className={styles.goBackLink}
+      >
+        &larr; Go back
+      </Link>
       <div className={styles.details}>
         <img
           src={posterURL}
@@ -47,14 +60,18 @@ const MovieDetails = () => {
           <p>{genres}</p>
         </div>
       </div>
-      <div>
+      <div className={styles.additionalInformation}>
         <h2>Additional information</h2>
         <ul>
-          <li>
-            <Link to="cast">Cast</Link>
+          <li className={styles.additional}>
+            <Link to="cast" state={location.state}>
+              Cast
+            </Link>
           </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
+          <li className={styles.additional}>
+            <Link to="reviews" state={location.state}>
+              Reviews
+            </Link>
           </li>
         </ul>
       </div>

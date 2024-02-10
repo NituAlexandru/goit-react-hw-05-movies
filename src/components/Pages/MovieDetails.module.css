@@ -14,8 +14,14 @@
 .details img {
   width: 50%;
   height: auto;
+  object-fit: contain;
 }
 .poster {
   width: 200px;
   margin-right: 20px;
+}
+.additionalInformation .additional {
+  list-style: none;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
