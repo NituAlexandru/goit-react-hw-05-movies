@@ -1,0 +1,9 @@
+.movieDetails {
+  display: flex;
+  align-items: flex-start;
+}
+
+.poster {
+  width: 200px;
+  margin-right: 20px;
+}
