@@ -45,3 +45,28 @@
   cursor: pointer;
   text-decoration: none;
 }
+@media (max-width: 500px) {
+  .movieDetails {
+    margin: 10px;
+  }
+  .details {
+    flex-direction: column;
+  }
+  .details img {
+    width: 100%;
+  }
+  .poster {
+    width: 100%;
+    margin-right: 0;
+  }
+  .additionalInformation ul {
+    flex-direction: column;
+  }
+  .additionalInformation .additional {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .goBackLink {
+    margin-top: 20px;
+  }
+}
