@@ -3,7 +3,7 @@ React Homework 5 - Routing
 To run use:
 
 1. git clone
-   [[URL_REPOSITORY](https://github.com/NituAlexandru/goit-react-hw-05-movies)]
+   [[goit-react-hw-05-movies](https://github.com/NituAlexandru/goit-react-hw-05-movies)]
 2. cd [goit-react-hw-05-movies]
 3. npm install
 4. npm start
@@ -34,6 +34,8 @@ To run use:
 5. Styling CSS Modules: Component styling is achieved using CSS Modules, which
    allows for component-level style definition, avoiding name conflicts and
    enhancing style modularity.
+
+[[Preview](https://github.com/NituAlexandru/goit-react-hw-05-movies/assets/react-hw-04-preview.mp4)]
 
 - TASKs: Este creat repository-ul goit-react-hw-05-movies. La trimiterea temelor
   există două link-uri: către fișierele sursă și către pagina de lucru din
