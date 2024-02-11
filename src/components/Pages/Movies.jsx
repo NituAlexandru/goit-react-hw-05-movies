@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { handleSearch } from '../API/ApiService';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import styles from './Movies.module.css';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -33,7 +34,7 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <div className={styles.moviesContainer}>
       <form onSubmit={search}>
         <input
           type="text"
@@ -41,11 +42,11 @@ const Movies = () => {
           onChange={e => setQuery(e.target.value)}
           placeholder="Search for a movie..."
         />
-        <button type="submit">Search</button>
+        <button type="submit" className={styles.submitBtn}>Search</button>
       </form>
-      <ul>
+      <ul className={styles.movies}>
         {searchResults.map(movie => (
-          <li key={movie.id}>
+          <li key={movie.id} className={styles.listItem}>
             <Link
               to={`/movies/${movie.id}`}
               state={{ from: '/movies', search: query }}

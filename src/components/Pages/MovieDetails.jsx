@@ -1,15 +1,27 @@
 // MovieDetails.jsx
 import React, { useState, useEffect } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import {
+  Link,
+  Navigate,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { fetchMovieDetails } from '../API/ApiService';
 import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
+  const [redirectToHome, setRedirectToHome] = useState(false);
   const { movieId } = useParams();
   const location = useLocation(); // Accesează locația curentă
 
   useEffect(() => {
+    if (!/^\d+$/.test(movieId)) {
+      setRedirectToHome(true);
+      return;
+    }
+
     const fetchDetails = async () => {
       try {
         const details = await fetchMovieDetails(movieId);
@@ -21,6 +33,10 @@ const MovieDetails = () => {
 
     fetchDetails();
   }, [movieId]);
+
+  if (redirectToHome) {
+    return <Navigate replace to="/" />;
+  }
 
   if (!movieDetails) {
     return <div>Loading...</div>;

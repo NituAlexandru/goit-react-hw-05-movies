@@ -22,6 +22,26 @@
 }
 .additionalInformation .additional {
   list-style: none;
-  margin-bottom: 10px;
+  background-color: #20be28;
+  padding: 10px 5px;
+  width: 100px;
+}
+.additionalInformation .additional a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.additionalInformation ul {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+.goBackLink {
+  padding: 10px;
+  background-color: #20be28;
+  color: #fff;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
 }

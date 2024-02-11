@@ -1,5 +1,6 @@
 .castContainer {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
@@ -7,8 +8,11 @@
 
 .actorCard {
   text-align: center;
+  width: 200px;
 }
-
+.actorCard img {
+  width: 100%;
+}
 .actorImage {
   width: 100%;
   max-width: 200px;
@@ -24,6 +28,7 @@
 .characterName {
   font-size: 1rem;
   color: #666;
+  width: 100%;
 }
 .noImageBanner {
   width: 200px;

@@ -1,112 +1,75 @@
-# React homework template
+React Homework 5 - Routing
 
-Цей проект був створений за допомогою
-[Create React App](https://github.com/facebook/create-react-app). Для знайомства
-і налаштування додаткових можливостей
-[звернися до документації](https://facebook.github.io/create-react-app/docs/getting-started).
+To run use:
 
-## Створення репозиторію за шаблоном
+1. git clone
+   [[URL_REPOSITORY](https://github.com/NituAlexandru/goit-react-hw-05-movies)]
+2. cd [goit-react-hw-05-movies]
+3. npm install
+4. npm start
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення репозиторію
-свого проєкта. Для цього натисни на кнопку `«Use this template»` і вибери опцію
-`«Create a new repository»`, як показано на зображенні.
+- React Technologies and Features Used This project is built using React.js, a
+  JavaScript library for building user interfaces, and leverages several
+  associated technologies and features to provide a fluid and modern navigation
+  experience within the application.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+1. React (Create React App) Create React App: The project was initiated using
+   Create React App, which offers a robust development environment and
+   simplifies the configuration of webpack, Babel, and other tools. Functional
+   Components and Hooks: All components are implemented as functions and use
+   hooks (useState, useEffect, useContext, etc.) for state management and side
+   effects handling. TASKs:
+2. React Router Declarative Navigation: We use React Router to manage navigation
+   within the application, allowing for asynchronous page loading and navigation
+   without reloading the page. Dynamic Routes: Dynamic routes are used to
+   display specific movie details based on IDs from URLs. Acceptance Criteria
+   Folosește acest model pentru un proiect React ca punct de plecare pentru
+   aplicația ta.
+3. Lazy Loading and Suspense Lazy Loading: To improve the initial performance of
+   the application, page components are lazily loaded using React.lazy.
+   Suspense: Along with lazy loading, we use <Suspense> to handle the display of
+   a loading indicator while components are being loaded asynchronously.
+4. Axios for HTTP Requests Axios: Axios is used to perform HTTP requests to the
+   TMDB API, facilitating the handling of asynchronous requests and responses.
+5. Styling CSS Modules: Component styling is achieved using CSS Modules, which
+   allows for component-level style definition, avoiding name conflicts and
+   enhancing style modularity.
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни поле
-його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`«Create repository from template»`.
+- TASKs: Este creat repository-ul goit-react-hw-05-movies. La trimiterea temelor
+  există două link-uri: către fișierele sursă și către pagina de lucru din
+  GitHub Pages. În starea componentelor se păstrează doar un set minim de date
+  necesare, iar restul sunt calculate. La rularea codului, nu există erori și
+  avertismente în consolă. Pentru fiecare componentă există un folder separat cu
+  un fișier React și unul de stiluri. Pentru toate componentele este descris
+  propTypes. În timpul apelului, componentei i se transmit toate datele pe care
+  le așteaptă sub formă de props. Numele componentelor sunt clare și
+  descriptive. Codul JS este curat și ușor de înțeles, se folosește Prettier.
+  Stilizarea este efectuată cu ajutorul CSS modules sau Styled Components. Movie
+  search Creează un routing de bază pentru o aplicație de căutare și stocare a
+  filmelor. Poți vedea o previzualizare a aplicației aici.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+API themoviedb.org Pentru backend, utilizează themoviedb.org API. Trebuie să te
+înregistrezi și să obții o cheie pentru API. În această sarcină, vei utiliza
+următoarele endpoint-uri.
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як
-показано на зображенні.
+/trending/get-trending - lista cu cele mai populare filme de astăzi, pentru a
+crea o colecție pe pagina principală. /search/search-movies - căutarea unui film
+după cuvinte cheie pe pagina de filme. /movies/get-movie-details - solicitarea
+informațiilor complete despre un film pentru pagina filmului.
+/movies/get-movie-credits - solicitarea informațiilor despre distribuția de
+actori pentru pagina filmului. /movies/get-movie-reviews - solicitarea
+recenziilor pentru pagina filmului. Link către documentație
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+Routes Aplicația trebuie să aibă următoarele rute. Dacă utilizatorul accesează o
+rută inexistentă, acesta ar trebui să fie redirecționat către pagina de
+principală.
 
-Проскроливши сторінку до самого кінця, у секції `«Workflow permissions»` вибери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це
-необхідно для автоматизації процесу деплою проєкту.
-
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
-
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів і папок
-репозиторію-шаблону. Далі працюй із ним як із будь-яким іншим особистим репозиторієм,
-клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй їх на
-GitHub.
-
-## Підготовка до роботи
-
-1. Переконайся що на комп'ютері встановлено LTS-версія Node.js.
-   [Завантаж і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проєкту командою `npm install`.
-3. Запусти режим розробки, виконавши команду `npm start`.
-4. Перейди в браузері за адресою [http://localhost:3000](http://localhost:3000).
-   Ця сторінка буде автоматично перезавантажуватися після збереження змін у файлах проєкту.
-
-## Деплой
-
-Продакшн версія проєкту буде автоматично проходити лінтинг, збиратися і
-деплоїтися на GitHub Pages, у гілку `gh-pages`, щоразу, коли оновлюється
-гілка `main`. Наприклад, після прямого пушу або прийнятого пул-реквесту. Для цього
-необхідно у файлі `package.json` відредагувати поле `homepage`, замінивши
-`your_username` і `your_repo_name` на свої, і відправити зміни на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн-версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, сборки або деплою сталася помилка.
-
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і
-у вікні, що випадає, перейти за посиланням `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися
-за адресою, вказаною у відредагованій властивості `homepage`. Наприклад, ось
-посилання на живу версію для цього репозиторію
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Якщо відкривається порожня сторінка, переконайся, що у вкладці `Console` немає помилок
-пов'язаних із неправильними шляхами до CSS і JS файлів проєкту (**404**). Швидше 
-за все у тебе неправильне значення властивості `homepage` у файлі `package.json`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши у пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Як це працює
-
-![How it works](./assets/how-it-works.png)
-
-1. Після кожного пушу в гілку `main` GitHub-репозиторія, запускається спеціальний
-   скрипт (GitHub Action) з файла `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується і
-   проходить лінтинг і збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн-версія файлів проєкту
-   відправляється в гілку `gh-pages`. В іншому випадку, в лозі виконання
-   скрипта буде вказано в чому проблема.
+'/' - componenta Home, pagina principală cu lista de filme populare. '/movies' -
+componenta Movies, pagina de căutare a unui film după cuvântul cheie.
+'/movies/:movieId' - componenta MovieDetails, pagina cu informații detaliate
+despre film. /movies/:movieId/cast - componenta Cast, informații despre
+distribuția de actori. Afișată pe pagina MovieDetails.
+/movies/:movieId/reviews - componenta Reviews, informații despre recenzii.
+Afișată pe pagina MovieDetails. Code Splitting (separarea codului) Adaugă
+încărcarea asincronă a codului JS pentru rutele aplicației folosind React.lazy()
+și <Suspense>.

@@ -16,7 +16,7 @@ export const fetchTrendingMovies = async () => {
     return response.data.results;
   } catch (error) {
     console.error('Error fetching trending movies:', error);
-    throw error; 
+    throw error;
   }
 };
 
