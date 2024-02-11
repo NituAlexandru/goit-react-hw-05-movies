@@ -35,8 +35,6 @@ To run use:
    allows for component-level style definition, avoiding name conflicts and
    enhancing style modularity.
 
-[![Preview](https://raw.githubusercontent.com/NituAlexandru/goit-react-hw-05-movies/main/assets/react-hw-04-preview.mp4)](https://github.com/NituAlexandru/goit-react-hw-05-movies/blob/main/assets/react-hw-04-preview.mp4)
-
 - TASKs: Este creat repository-ul goit-react-hw-05-movies. La trimiterea temelor
   există două link-uri: către fișierele sursă și către pagina de lucru din
   GitHub Pages. În starea componentelor se păstrează doar un set minim de date
